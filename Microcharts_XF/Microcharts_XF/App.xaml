@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Microcharts_XF.App">
     <Application.Resources>
-
+        <Color x:Key="AmberSari">#ffc400</Color>
+        <Color x:Key="Gri">#616161</Color>
     </Application.Resources>
 </Application>

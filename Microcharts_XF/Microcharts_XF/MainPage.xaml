@@ -2,13 +2,60 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Microcharts_XF"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="Microcharts_XF.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0" BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image  Source="adimsayar.png"  WidthRequest="48" HeightRequest="48"/>
+                <Label Text="Adım Sayar" FontAttributes="Bold" TextColor="{StaticResource Gri}" Margin="15,0,0,0"/>
+            </StackLayout>
+
+            <forms:ChartView Grid.Column="1"  x:Name="StepChartActivity" HeightRequest="250" />
+        </Grid>
+
+        <Grid Grid.Row="1" BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image  Source="uyku.png" WidthRequest="48" HeightRequest="48"/>
+                <Label Text="Uyku" FontAttributes="Bold" TextColor="{StaticResource Gri}" Margin="8,0,0,0"/>
+            </StackLayout>
+
+            <forms:ChartView Grid.Column="1" x:Name="SleepChartActivity" HeightRequest="250"/>
+        </Grid>
+
+
+        <Grid Grid.Row="2" BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image  Source="kalori.png"   WidthRequest="48" HeightRequest="48"/>
+                <Label Text="Kalori" FontAttributes="Bold" TextColor="{StaticResource Gri}" Margin="8,0,0,0"/>
+            </StackLayout>
+
+
+            <forms:ChartView Grid.Column="1" x:Name="CalorieChartActivity" HeightRequest="250"/>
+        </Grid>
+    </Grid>
 
 </ContentPage>
